@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock, paper, scissors</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="main">
+        <!-- //score -->
+        <div class="top">
+            <div id="logo" class="">
+                <img src="./images/images/logo.svg" alt="logo">
+            </div>
+            <div id="score" class="score">
+                <div id="score-title">
+                    <span class="text-uppercase score-text">score</span>
+                </div>
+                <h2 class="score-result">0</h2>
+            </div>
+        </div>
+        <!-- choice -->
+        <div class="choice">
+            <div id="paper">
+                <img src="./images/images/icon-paper.svg" alt="paper">
+            </div>
+            <div id="triangle">
+                <img id="triangle" src="./images/images/bg-triangle.svg" alt="triangle">
+            </div>
+            <div class="scissors">
+                <img src="./images/images/icon-scissors.svg" alt="scissors">
+            </div>
+        </div>
+        <div id="rockcontainer">
+            <div id="rock">
+                <img id="rockImg" src="./images/images/icon-rock.svg" alt="rock">
+            </div>
+        </div>
+        <div class="rules">
+            <div class="test">
+                <span id="rules-text" class="text-uppercase">rules</span>
+            </div>
+        </div>
+
+        <!-- player picked -->
+        <div class="game-part1">
+            <div class="you-pick">
+                <h4>YOU PICKED</h4>
+                <div class="player">
+                    <div class="game-scissors">
+                        <img src="./images/images/icon-scissors.svg" alt="scissors">
+                    </div>
+                </div>
+            </div>
+            <div class="the-house-pick">
+                <h4>THE HOUSE PICKED</h4>
+                <div class="empty-spot"></div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="./app.js"></script>
+</body>
+
+</html>
