@@ -4,7 +4,7 @@ const rockContainer = document.querySelector('#rockcontainer');
 const part1 = document.querySelector('.game-part1');
 const part2 = document.querySelector('.game-part2');
 const part3 = document.querySelector('.game-part3');
-const housePick = document.querySelector('.the-house-pick');
+const housePick = document.querySelector('#house-pick');
 // signs selected
 const player = document.querySelector('#player-picked');
 const paper = document.querySelector('.game-paper');
@@ -25,11 +25,15 @@ function choosePaper() {
     setTimeout(function() {
 
 
-        if (random = 1) {
+        if (random == 1) {
+            housePick.classList.remove('.empty-spot');
             housePick.classList.add('.base-class', '.game-scissors');
-        } else if (random = 2) {
+        }
+        if (random == 2) {
+            housePick.classList.remove('.empty-spot');
             housePick.classList.add('.base-class', '.game-rock');
         } else {
+            housePick.classList.remove('.empty-spot');
             housePick.classList.add('.base-class', '.game-paper');
         }
 
