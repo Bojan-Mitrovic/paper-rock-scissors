@@ -12,7 +12,7 @@ const rock = document.querySelector('.game-rock');
 const scissors = document.querySelector('.game-scissors');
 
 const signList = [];
-
+let random = Math.floor(Math.random() * 3);
 
 // sign onclick functions
 
@@ -23,11 +23,11 @@ function choosePaper() {
     player.classList.add('game-paper');
 
     setTimeout(function() {
-        let random = Math.floor(Math.random() * 3);
 
-        if (random = 0) {
+
+        if (random = 1) {
             housePick.classList.add('.base-class', '.game-scissors');
-        } else if (random = 1) {
+        } else if (random = 2) {
             housePick.classList.add('.base-class', '.game-rock');
         } else {
             housePick.classList.add('.base-class', '.game-paper');
