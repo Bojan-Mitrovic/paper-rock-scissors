@@ -7,12 +7,14 @@ const part3 = document.querySelector('.game-part3');
 // signs selected
 const player = document.querySelector('.player-picked');
 const player2 = document.querySelector('#player-picked2');
+const player3 = document.querySelector('#player-part-3');
+const computer3 = document.querySelector('#computer-part-3');
 const paper = document.querySelector('.game-paper');
 const rock = document.querySelector('.game-rock');
 const scissors = document.querySelector('.game-scissors');
 const housePick = document.querySelector('#house-pick');
 
-const theHousePick = document.querySelector('.the-house-pick #house-pick');
+// const theHousePick = document.querySelector('.the-house-pick #house-pick');
 
 
 function computerPlay() {
@@ -24,15 +26,26 @@ function computerPlay() {
 
     switch (computerSelection) {
         case 0:
-            chooseRock(true);
+            // chooseRock(true);
+            housePick.classList.remove('empty-spot');
+            housePick.classList.add('base-class', 'game-rock');
+            computer3.classList.add('game-rock');
+
             break;
 
         case 1:
-            choosePaper(true);
+            // choosePaper(true);
+            housePick.classList.remove('empty-spot');
+            housePick.classList.add('base-class', 'game-paper');
+            computer3.classList.add('game-paper');
+
             break;
 
         case 2:
-            chooseScissors(true);
+            // chooseScissors(true);
+            housePick.classList.remove('empty-spot');
+            housePick.classList.add('base-class', 'game-scissors');
+            computer3.classList.add('game-scissors');
             break;
 
         default:
@@ -42,34 +55,25 @@ function computerPlay() {
 
 function playPart1() {
     // Run the computer function
-    computerPlay();
-
-    // Play part2
-    playPart2();
-}
-
-function playPart2() {
-    // Create a delay for our actions to give the user some time to observe
-    // and look at what is happening
     setTimeout(function() {
-        part1.style.display = 'none';
-        part2.style.display = 'flex';
+        computerPlay();
 
-        // Play part 3
-        playPart3();
+        // Play part2
+        playPart2();
     }, 1500);
 }
 
-function playPart3() {
+
+function playPart2() {
     setTimeout(function() {
-        part2.style.display = 'none';
+        part1.style.display = 'none';
         part3.style.display = 'flex';
 
     }, 1500);
 }
 
 // sign onclick functions
-function choosePaper(computer = false) {
+function choosePaper(computer) {
     // Set styling of part 1 to none
     choice.style.display = 'none';
     rockContainer.style.display = 'none';
@@ -80,6 +84,8 @@ function choosePaper(computer = false) {
         housePick.classList.add('game-paper');
     } else {
         player.classList.add('game-paper');
+        player3.classList.add('game-paper');
+
 
         // Run computer choice
         playPart1();
@@ -101,6 +107,8 @@ function chooseScissors(computer) {
         housePick.classList.add('game-scissors');
     } else {
         player.classList.add('game-scissors');
+        player3.classList.add('game-scissors');
+
 
         // Run computer choice
         playPart1();
@@ -121,6 +129,8 @@ function chooseRock(computer) {
         housePick.classList.add('game-rock');
     } else {
         player.classList.add('game-rock');
+        player3.classList.add('game-rock');
+
 
         // Run computer choice
         playPart1();
