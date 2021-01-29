@@ -14,6 +14,10 @@ const rock = document.querySelector('.game-rock');
 const scissors = document.querySelector('.game-scissors');
 const housePick = document.querySelector('#house-pick');
 
+// results
+const win = doucment.querySelector('.win');
+const lose = doucment.querySelector('.lose');
+const draw = doucment.querySelector('.draw');
 // const theHousePick = document.querySelector('.the-house-pick #house-pick');
 
 
@@ -68,8 +72,22 @@ function playPart2() {
     setTimeout(function() {
         part1.style.display = 'none';
         part3.style.display = 'flex';
+        gameWinner();
 
     }, 1500);
+}
+
+function gameWinner() {
+
+    if (player3 === computer3) {
+        draw.style.display = 'flex';
+    } else if (player3.classList.contains('.game-paper') && computer3.classList.contains('.game-rock') ||
+        player3.classList.contains('.game-scissors') && computer3.classList.contains('.game-paper') ||
+        player3.classList.contains('.game-rock') && computer3.classList.contains('.game-scissors')) {
+        win.style.display = 'flex';
+    } else {
+        lose.style.display = 'flex';
+    }
 }
 
 // sign onclick functions

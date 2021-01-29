@@ -382,16 +382,9 @@ body {
   width: 218px;
 }
 
-.game-part3 .win-lose .win {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.game-part3 .win-lose .lose {
+.game-part3 .win-lose .win,
+.game-part3 .win-lose .lose,
+.game-part3 .win-lose .draw {
   display: none;
   -webkit-box-pack: center;
       -ms-flex-pack: center;

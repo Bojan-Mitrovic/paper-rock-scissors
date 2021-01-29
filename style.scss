@@ -274,11 +274,9 @@
                             justify-content: center;
                             margin-bottom: -60px;
                             width: 218px;
-                            .win {
-                                display: flex;
-                                justify-content: center;
-                            }
-                            .lose {
+                            .win,
+                            .lose,
+                            .draw {
                                 display: none;
                                 justify-content: center;
                             }
