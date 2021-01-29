@@ -261,13 +261,6 @@ body {
         letter-spacing: 0.1em;
         margin-top: 30px;
     }
-    .the-house-pick {
-        display: flex;
-        position: relative;
-        flex-direction: column;
-        align-items: center;
-        height: 500px;
-    }
     #house-pick {}
 }
 
@@ -286,6 +279,9 @@ body {
         width: 300px;
         height: 300px;
     }
+    #house-pick {
+        margin-top: 50px;
+    }
     .player {
         margin-top: 30px;
     }
@@ -303,8 +299,10 @@ body {
     }
     .the-house-pick {
         display: flex;
+        position: relative;
         flex-direction: column;
         align-items: center;
+        height: 500px;
     }
     .win-lose {
         display: none;
