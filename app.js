@@ -15,9 +15,9 @@ const scissors = document.querySelector('.game-scissors');
 const housePick = document.querySelector('#house-pick');
 
 // results
-const win = doucment.querySelector('.win');
-const lose = doucment.querySelector('.lose');
-const draw = doucment.querySelector('.draw');
+const win = document.querySelector('.win');
+const lose = document.querySelector('.lose');
+const draw = document.querySelector('.draw');
 // const theHousePick = document.querySelector('.the-house-pick #house-pick');
 
 
@@ -79,15 +79,22 @@ function playPart2() {
 
 function gameWinner() {
 
-    if (player3 === computer3) {
+    if (player3.classList.contains('game-scissors') === computer3.classList.contains('game-scissors') ||
+        player3.classList.contains('game-paper') === computer3.classList.contains('game-paper') ||
+        player3.classList.contains('game-rock') === computer3.classList.contains('game-rock')) {
         draw.style.display = 'flex';
-    } else if (player3.classList.contains('.game-paper') && computer3.classList.contains('.game-rock') ||
-        player3.classList.contains('.game-scissors') && computer3.classList.contains('.game-paper') ||
-        player3.classList.contains('.game-rock') && computer3.classList.contains('.game-scissors')) {
+        console.log('draw');
+    } else if (player3.classList.contains('game-paper') && computer3.classList.contains('game-rock') ||
+        player3.classList.contains('game-scissors') && computer3.classList.contains('game-paper') ||
+        player3.classList.contains('game-rock') && computer3.classList.contains('game-scissors')) {
         win.style.display = 'flex';
+        console.log('finally');
+
     } else {
         lose.style.display = 'flex';
+        console.log('lose');
     }
+
 }
 
 // sign onclick functions
