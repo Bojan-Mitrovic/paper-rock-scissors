@@ -53,8 +53,12 @@ function computerPlay() {
             break;
 
         default:
-            console.log("Whe should never come here.");
+            console.log("We should never come here.");
     }
+}
+
+function playAgain() {
+
 }
 
 function playPart1() {
@@ -79,9 +83,9 @@ function playPart2() {
 
 function gameWinner() {
 
-    if (player3.classList.contains('game-scissors') === computer3.classList.contains('game-scissors') ||
-        player3.classList.contains('game-paper') === computer3.classList.contains('game-paper') ||
-        player3.classList.contains('game-rock') === computer3.classList.contains('game-rock')) {
+    if (player3.classList.contains('game-scissors') && computer3.classList.contains('game-scissors') ||
+        player3.classList.contains('game-paper') && computer3.classList.contains('game-paper') ||
+        player3.classList.contains('game-rock') && computer3.classList.contains('game-rock')) {
         draw.style.display = 'flex';
         console.log('draw');
     } else if (player3.classList.contains('game-paper') && computer3.classList.contains('game-rock') ||

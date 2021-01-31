@@ -41,6 +41,14 @@ body {
   grid-area: 1 / 2 / 2 / 3;
   margin: 20px;
   padding: 0px 20px 0px 30px;
+  border: #606e85 3px solid;
+  border-radius: 15px;
+  margin-top: 50px;
+  padding: 15px 20px;
+  width: 706px;
+  height: 127px;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
 }
 
 .score {
@@ -140,13 +148,6 @@ body {
 #rockImg {
   margin-left: 5px;
   margin-top: 7px;
-}
-
-.top {
-  border: #606e85 3px solid;
-  border-radius: 15px;
-  margin-top: 50px;
-  padding: 15px 20px;
 }
 
 #score {
@@ -308,7 +309,6 @@ body {
 
 .game-part3 {
   display: none;
-  margin-top: 40px;
   -ms-flex-pack: distribute;
       justify-content: space-around;
   position: relative;

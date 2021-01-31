@@ -28,6 +28,14 @@
                         grid-area: 1 / 2 / 2 / 3;
                         margin: 20px;
                         padding: 0px 20px 0px 30px;
+                        border: hsl(217, 16%, 45%) 3px solid;
+                        border-radius: 15px;
+                        margin-top: 50px;
+                        padding: 15px 20px;
+                        // other solution?
+                        width: 706px;
+                        height: 127px;
+                        box-sizing: content-box;
                     }
                     
                     .score {
@@ -98,13 +106,6 @@
                     }
                     
                     // style
-                    .top {
-                        border: hsl(217, 16%, 45%) 3px solid;
-                        border-radius: 15px;
-                        margin-top: 50px;
-                        padding: 15px 20px;
-                    }
-                    
                     #score {
                         display: flex;
                         background: rgb(223, 215, 215);
@@ -232,7 +233,6 @@
                     
                     .game-part3 {
                         display: none;
-                        margin-top: 40px;
                         justify-content: space-around;
                         position: relative;
                         grid-area: 2 / 1 / 3 / 4;
