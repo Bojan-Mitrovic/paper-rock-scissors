@@ -143,20 +143,22 @@ body {
 .rules {
     grid-area: 3 / 3 / 4 / 4;
     .rules-button {
-        margin-top: 80px;
-        margin-left: 150px;
+        right: 200px;
+        bottom: 160px;
+        position: fixed;
     }
-    #rules-text {
-        display: inline-block;
-        color: hsl(229, 25%, 31%);
-        padding: 7px 35px;
-        border-radius: 10px;
-        border: grey 2px solid;
-        color: whitesmoke;
-        letter-spacing: 0.3em;
-        font-weight: lighter;
-        cursor: pointer;
-    }
+}
+
+#rules-text {
+    display: inline-block;
+    color: hsl(229, 25%, 31%);
+    padding: 7px 35px;
+    border-radius: 10px;
+    border: grey 2px solid;
+    color: whitesmoke;
+    letter-spacing: 0.3em;
+    font-weight: lighter;
+    cursor: pointer;
 }
 
 .rules-img {
@@ -171,8 +173,8 @@ body {
     align-items: center;
     background-color: white;
     left: 25%;
-    bottom: 9%;
-    position: relative;
+    bottom: 4%;
+    position: absolute;
     z-index: 1;
     .top-rules {
         display: flex;

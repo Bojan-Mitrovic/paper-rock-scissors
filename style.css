@@ -195,11 +195,12 @@ body {
 }
 
 .rules .rules-button {
-  margin-top: 80px;
-  margin-left: 150px;
+  right: 200px;
+  bottom: 160px;
+  position: fixed;
 }
 
-.rules #rules-text {
+#rules-text {
   display: inline-block;
   color: #3b4363;
   padding: 7px 35px;
@@ -234,8 +235,8 @@ body {
           align-items: center;
   background-color: white;
   left: 25%;
-  bottom: 9%;
-  position: relative;
+  bottom: 4%;
+  position: absolute;
   z-index: 1;
 }
 
