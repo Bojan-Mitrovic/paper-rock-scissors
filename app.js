@@ -15,11 +15,36 @@ const scissors = document.querySelector('.game-scissors');
 const housePick = document.querySelector('#house-pick');
 
 // results
+const scoreResult = document.querySelector('.score-result');
 const win = document.querySelector('.win');
 const lose = document.querySelector('.lose');
 const draw = document.querySelector('.draw');
-// const theHousePick = document.querySelector('.the-house-pick #house-pick');
+var score = 0;
 
+const rulesIMG = document.querySelector('.rules-img');
+
+
+
+// rules functions
+window.onload = () => {
+    rulesIMG.style.display = 'flex';
+}
+
+function closeRules() {
+    rulesIMG.style.display = 'none';
+}
+
+function showRules() {
+    rulesIMG.style.display = 'flex';
+
+}
+
+
+// event listener when the pages loads
+document.addEventListener('DOMContentLoaded', function() {
+    score = sessionStorage.getItem('score') || 0;
+    scoreResult.innerHTML = score;
+})
 
 function computerPlay() {
 
@@ -57,10 +82,6 @@ function computerPlay() {
     }
 }
 
-function playAgain() {
-
-}
-
 function playPart1() {
     // Run the computer function
     setTimeout(function() {
@@ -93,7 +114,10 @@ function gameWinner() {
         player3.classList.contains('game-rock') && computer3.classList.contains('game-scissors')) {
         win.style.display = 'flex';
         console.log('finally');
-
+        // adding score points
+        score++;
+        sessionStorage.setItem('score', score);
+        scoreResult.innerHTML = score;
     } else {
         lose.style.display = 'flex';
         console.log('lose');

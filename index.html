@@ -16,7 +16,7 @@
             <div id="logo" class="">
                 <img src="./images/images/logo.svg" alt="logo">
             </div>
-            <div id="score" class="score">
+            <div id="score" class="score-container">
                 <div id="score-title">
                     <span class="text-uppercase score-text">score</span>
                 </div>
@@ -25,23 +25,34 @@
         </div>
         <!-- choice -->
         <div class="choice">
-            <div id="paper" onclick="choosePaper()">
-                <img src="./images/images/icon-paper.svg" alt="paper">
+            <div id="paper" class="base-choice" onclick="choosePaper()">
             </div>
             <div id="triangle">
                 <img id="triangle" src="./images/images/bg-triangle.svg" alt="triangle">
             </div>
-            <div class="scissors" onclick="chooseScissors()">
-                <img src="./images/images/icon-scissors.svg" alt="scissors">
+            <div id="scissors" class="base-choice" onclick="chooseScissors()">
             </div>
         </div>
         <div id="rockcontainer" onclick="chooseRock()">
-            <div id="rock">
-                <img id="rockImg" src="./images/images/icon-rock.svg" alt="rock">
+            <div id="rock" class="base-choice">
             </div>
         </div>
+
+        <!-- rules image  -->
+        <div class="rules-img">
+            <div class="top-rules">
+                <h2 id="rules">RULES</h2>
+                <div id="close-btn" onclick="closeRules()">
+                    <img src="./images/images/icon-close.svg" alt="" id="close-rules">
+                </div>
+            </div>
+            <div id="game-rules">
+                <img src="./images/images/logo-new.svg" alt="rules">
+            </div>
+        </div>
+        <!-- rules button -->
         <div class="rules">
-            <div class="test">
+            <div class="rules-button" onclick="showRules()">
                 <span id="rules-text" class="text-uppercase">rules</span>
             </div>
         </div>
