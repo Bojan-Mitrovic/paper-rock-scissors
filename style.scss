@@ -1,347 +1,699 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@700&display=swap');
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Barlow Semi Condensed', sans-serif;
-    background: radial-gradient(circle at top, rgb(31, 54, 86) 30%, rgb(20, 23, 58) 100%);
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
-}
-
-// positioning
-.main {
-    display: grid;
-    position: relative;
-    grid-template-columns: 1.4fr 2fr 1.4fr;
-    grid-template-rows: 0.75fr 1.4fr 0.8fr;
-}
-
-.top {
-    display: flex;
-    position: relative;
-    justify-content: space-between;
-    align-items: center;
-    grid-area: 1 / 2 / 2 / 3;
-    margin: 20px;
-    padding: 0px 20px 0px 30px;
-    border: hsl(217, 16%, 45%) 3px solid;
-    border-radius: 15px;
-    margin-top: 50px;
-    padding: 15px 20px;
-    // other solution?
-    width: 706px;
-    height: 127px;
-    box-sizing: content-box;
-}
-
-.score-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    display: flex;
-    background: rgb(223, 215, 215);
-    border-radius: 10px;
-    padding: 0 60px;
-    align-content: space-around;
-    .score-result {
-        font-size: 5em;
-        color: hsl(229, 25%, 31%);
+    @import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@700&display=swap');
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
     }
-    #score-title {
-        font-size: 12px;
-        position: relative;
-        top: 15px;
-        color: hsl(229, 64%, 46%);
-        letter-spacing: 2px;
-        font-weight: 700;
-    }
-    .score-text {
-        color: hsl(229, 64%, 46%);
-        font-weight: 700;
-        font-size: 1.3em;
-    }
-}
-
-.choice {
-    display: flex;
-    grid-area: 2 / 2 / 3 / 3;
-    justify-content: center;
-    margin-top: 80px;
-    #paper {
-        position: relative;
-        background-image: url('./images/images/icon-paper.svg');
+    
+    body {
+        font-family: 'Barlow Semi Condensed', sans-serif;
+        background: radial-gradient(circle at top, rgb(31, 54, 86) 30%, rgb(20, 23, 58) 100%);
         background-repeat: no-repeat;
-        background-size: 45%;
-        background-position: center;
-        border: 21px solid hsl(230, 89%, 62%);
-        box-shadow: inset 0 8px rgb(189, 181, 181), 0 10px hsl(230, 89%, 47%);
-        left: 120px;
-        bottom: 25px;
-        z-index: 1;
-        cursor: pointer;
+        background-size: cover;
+        height: 100vh;
     }
-    #triangle {
+    
+    // positioning
+    .main {
+        display: grid;
         position: relative;
-        top: 20px;
-        width: 340px;
+        grid-template-columns: 1.4fr 2fr 1.4fr;
+        grid-template-rows: 0.75fr 1.4fr 0.8fr;
     }
-    #scissors {
-        position: relative;
-        background-image: url('./images/images/icon-scissors.svg');
-        background-repeat: no-repeat;
-        background-size: 45%;
-        background-position: center;
-        border: 21px solid hsl(39, 89%, 49%);
-        box-shadow: inset 0 8px rgb(189, 181, 181), 0 10px hsl(40, 87%, 35%);
-        right: 110px;
-        bottom: 25px;
-        z-index: 1;
-        cursor: pointer;
-    }
-}
-
-.base-choice {
-    background: rgb(223, 215, 215);
-    padding: 30px;
-    border-radius: 50%;
-    display: block;
-    width: 85px;
-    height: 85px;
-    box-sizing: content-box;
-}
-
-#rockcontainer {
-    display: flex;
-    grid-area: 3 / 2 / 4 / 3;
-    justify-content: center;
-}
-
-#rock {
-    position: relative;
-    background-image: url('./images/images/icon-rock.svg');
-    background-repeat: no-repeat;
-    background-size: 45%;
-    background-position: center;
-    border: 21px solid hsl(349, 71%, 52%);
-    box-shadow: inset 0 8px rgb(189, 181, 181), 0 10px hsl(349, 71%, 37%);
-    bottom: 110px;
-    cursor: pointer;
-}
-
-#rockImg {
-    margin-left: 5px;
-    margin-top: 7px;
-}
-
-// rules
-.rules {
-    grid-area: 3 / 3 / 4 / 4;
-    .rules-button {
-        right: 200px;
-        bottom: 160px;
-        position: fixed;
-    }
-}
-
-#rules-text {
-    display: inline-block;
-    color: hsl(229, 25%, 31%);
-    padding: 7px 35px;
-    border-radius: 10px;
-    border: grey 2px solid;
-    color: whitesmoke;
-    letter-spacing: 0.3em;
-    font-weight: lighter;
-    cursor: pointer;
-}
-
-.rules-img {
-    grid-area: 2 / 2 / 3 / 3;
-    width: 415px;
-    height: 415px;
-    display: none;
-    flex-direction: column;
-    align-content: center;
-    justify-content: space-around;
-    border-radius: 10px;
-    align-items: center;
-    background-color: white;
-    left: 25%;
-    bottom: 4%;
-    position: absolute;
-    z-index: 1;
-    .top-rules {
+    
+    .top {
         display: flex;
+        position: relative;
         justify-content: space-between;
-        padding-top: 20px;
-        width: 340px;
-    }
-    #rules {
-        font-size: 2em;
-        color: hsl(229, 25%, 31%);
-        font-weight: bold;
-    }
-    #close-btn {
-        display: flex;
-        justify-content: center;
         align-items: center;
+        grid-area: 1 / 2 / 2 / 3;
+        margin: 20px;
+        padding: 0px 20px 0px 30px;
+        border: hsl(217, 16%, 45%) 3px solid;
+        border-radius: 15px;
+        margin-top: 50px;
+        padding: 15px 20px;
+        // other solution?
+        width: 706px;
+        height: 127px;
+        box-sizing: content-box;
+    }
+    
+    .score-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        display: flex;
+        background: rgb(223, 215, 215);
+        border-radius: 10px;
+        padding: 0 60px;
+        align-content: space-around;
+        .score-result {
+            font-size: 5em;
+            color: hsl(229, 25%, 31%);
+        }
+        #score-title {
+            font-size: 12px;
+            position: relative;
+            top: 15px;
+            color: hsl(229, 64%, 46%);
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+        .score-text {
+            color: hsl(229, 64%, 46%);
+            font-weight: 700;
+            font-size: 1.3em;
+        }
+    }
+    
+    .choice {
+        display: flex;
+        grid-area: 2 / 2 / 3 / 3;
+        justify-content: center;
+        margin-top: 80px;
+        #paper {
+            position: relative;
+            background-image: url('./images/images/icon-paper.svg');
+            background-repeat: no-repeat;
+            background-size: 45%;
+            background-position: center;
+            border: 21px solid hsl(230, 89%, 62%);
+            box-shadow: inset 0 8px rgb(189, 181, 181), 0 10px hsl(230, 89%, 47%);
+            left: 120px;
+            bottom: 25px;
+            z-index: 1;
+            cursor: pointer;
+        }
+        #triangle {
+            position: relative;
+            top: 20px;
+            width: 340px;
+        }
+        #scissors {
+            position: relative;
+            background-image: url('./images/images/icon-scissors.svg');
+            background-repeat: no-repeat;
+            background-size: 45%;
+            background-position: center;
+            border: 21px solid hsl(39, 89%, 49%);
+            box-shadow: inset 0 8px rgb(189, 181, 181), 0 10px hsl(40, 87%, 35%);
+            right: 110px;
+            bottom: 25px;
+            z-index: 1;
+            cursor: pointer;
+        }
+    }
+    
+    .base-choice {
+        background: rgb(223, 215, 215);
+        padding: 30px;
+        border-radius: 50%;
+        display: block;
+        width: 85px;
+        height: 85px;
+        box-sizing: content-box;
+    }
+    
+    #rockcontainer {
+        display: flex;
+        grid-area: 3 / 2 / 4 / 3;
+        justify-content: center;
+    }
+    
+    #rock {
+        position: relative;
+        background-image: url('./images/images/icon-rock.svg');
+        background-repeat: no-repeat;
+        background-size: 45%;
+        background-position: center;
+        border: 21px solid hsl(349, 71%, 52%);
+        box-shadow: inset 0 8px rgb(189, 181, 181), 0 10px hsl(349, 71%, 37%);
+        bottom: 110px;
         cursor: pointer;
     }
-    #game-rules {
-        padding-bottom: 20px;
+    
+    #rockImg {
+        margin-left: 5px;
+        margin-top: 7px;
     }
-}
-
-//game playing sign style
-.base-class {
-    width: 165px;
-    height: 165px;
-    background: rgb(223, 215, 215);
-    border-radius: 50%;
-    display: block;
-    box-sizing: content-box;
-    padding: 30px;
-}
-
-.game-scissors {
-    background-image: url(./images/images/icon-scissors.svg);
-    background-size: 45%;
-    background-position: center;
-    background-repeat: no-repeat;
-    border: 32px solid hsl(39, 89%, 49%);
-    box-shadow: inset 0 12px rgb(189, 181, 181), 0 12px hsl(40, 87%, 35%);
-}
-
-.game-rock {
-    background-image: url(./images/images/icon-rock.svg);
-    background-size: 45%;
-    background-position: center;
-    background-repeat: no-repeat;
-    border-radius: 50%;
-    border: 32px solid hsl(349, 71%, 52%);
-    box-shadow: inset 0 12px rgb(189, 181, 181), 0 12px hsl(349, 71%, 37%);
-}
-
-.game-paper {
-    background-image: url(./images/images/icon-paper.svg);
-    background-size: 45%;
-    background-position: center;
-    background-repeat: no-repeat;
-    border-radius: 50%;
-    border: 32px solid hsl(230, 89%, 62%);
-    box-shadow: inset 0 12px rgb(189, 181, 181), 0 12px hsl(230, 89%, 47%);
-    ;
-}
-
-// you picked
-.game-part1 {
-    display: none;
-    margin-top: 40px;
-    justify-content: space-around;
-    position: relative;
-    grid-area: 2 / 2 / 3 / 3;
-    .you-pick {
+    
+    // rules
+    .rules {
+        grid-area: 3 / 3 / 4 / 4;
+        .rules-button {
+            right: 200px;
+            bottom: 160px;
+        }
+    }
+    
+    #rules-text {
+        display: inline-block;
+        color: hsl(229, 25%, 31%);
+        padding: 7px 35px;
+        border-radius: 10px;
+        border: grey 2px solid;
+        color: whitesmoke;
+        letter-spacing: 0.3em;
+        font-weight: lighter;
+        cursor: pointer;
+    }
+    
+    .rules-img {
+        grid-area: 2 / 2 / 3 / 3;
+        width: 415px;
+        height: 415px;
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 300px;
-        height: 300px;
-    }
-    img {
-        width: 100px;
-        margin-top: 38px;
-        margin-left: 26px;
-    }
-    h4 {
-        display: flex;
-        justify-content: center;
-        color: white;
-        font-weight: 800;
-        font-size: 1.5em;
-        letter-spacing: 0.1em;
-        margin-top: 30px;
-        margin-bottom: 60px
-    }
-    .empty-spot {
-        width: 220px;
-        height: 220px;
-        margin-top: 75px;
-        border-radius: 50%;
-        background: rgb(20, 23, 58);
-        opacity: 0.4;
-    }
-}
-
-.game-part3 {
-    display: none;
-    justify-content: space-around;
-    position: relative;
-    grid-area: 2 / 1 / 3 / 4;
-    padding: 0 400px;
-    .you-pick {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 300px;
-        height: 300px;
-    }
-    // #house-pick {
-    //     margin-top: 50px;
-    // }
-    img {
-        width: 100px;
-        margin-top: 38px;
-        margin-left: 26px;
-    }
-    h4 {
-        color: white;
-        font-weight: 800;
-        font-size: 1.5em;
-        letter-spacing: 0.1em;
-        margin-top: 30px;
-        margin-bottom: 60px;
-    }
-    .the-house-pick {
-        display: flex;
-        position: relative;
-        flex-direction: column;
-        align-items: center;
-        height: 500px;
-    }
-    .win-lose {
-        display: flex;
-        flex-direction: column;
+        flex-wrap: wrap;
         align-content: center;
-        justify-content: center;
-        margin-bottom: -20px;
-        width: 218px;
-        .win,
-        .lose,
-        .draw {
-            display: none;
-            justify-content: center;
-        }
-        h1 {
-            color: white;
-            font-size: 3.5em;
-            font-weight: 800;
-            margin-bottom: 15px;
-        }
-        button {
+        padding: 30px 0;
+        justify-content: space-around;
+        border-radius: 10px;
+        background-color: white;
+        left: 25%;
+        bottom: 4%;
+        position: absolute;
+        z-index: 1;
+        #rules {
+            font-size: 2em;
             color: hsl(229, 25%, 31%);
-            border-radius: 10px;
-            padding: 11px;
-            font-size: 1.1em;
-            letter-spacing: 1px;
-            &:hover {
-                color: rgb(236, 39, 39)
+            font-weight: bold;
+            flex-basis: 50%;
+        }
+        #close-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        #game-rules {
+            margin-top: 35px;
+        }
+    }
+    
+    //game playing sign style
+    .base-class {
+        width: 165px;
+        height: 165px;
+        background: rgb(223, 215, 215);
+        border-radius: 50%;
+        display: block;
+        box-sizing: content-box;
+        padding: 30px;
+    }
+    
+    .game-scissors {
+        background-image: url(./images/images/icon-scissors.svg);
+        background-size: 45%;
+        background-position: center;
+        background-repeat: no-repeat;
+        border: 32px solid hsl(39, 89%, 49%);
+        box-shadow: inset 0 12px rgb(189, 181, 181), 0 12px hsl(40, 87%, 35%);
+    }
+    
+    .game-rock {
+        background-image: url(./images/images/icon-rock.svg);
+        background-size: 45%;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 50%;
+        border: 32px solid hsl(349, 71%, 52%);
+        box-shadow: inset 0 12px rgb(189, 181, 181), 0 12px hsl(349, 71%, 37%);
+    }
+    
+    .game-paper {
+        background-image: url(./images/images/icon-paper.svg);
+        background-size: 45%;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 50%;
+        border: 32px solid hsl(230, 89%, 62%);
+        box-shadow: inset 0 12px rgb(189, 181, 181), 0 12px hsl(230, 89%, 47%);
+        ;
+    }
+    
+    // you picked
+    .game-part1 {
+        display: none;
+        margin-top: 40px;
+        justify-content: space-around;
+        position: relative;
+        grid-area: 2 / 2 / 3 / 3;
+        .you-pick {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 300px;
+            height: 300px;
+        }
+        img {
+            width: 100px;
+            margin-top: 38px;
+            margin-left: 26px;
+        }
+        h4 {
+            display: flex;
+            justify-content: center;
+            color: white;
+            font-weight: 800;
+            font-size: 1.5em;
+            letter-spacing: 0.1em;
+            margin-top: 30px;
+            margin-bottom: 60px
+        }
+        .empty-spot {
+            width: 220px;
+            height: 220px;
+            margin-top: 75px;
+            border-radius: 50%;
+            background: rgb(20, 23, 58);
+            opacity: 0.4;
+        }
+    }
+    
+    .game-part3 {
+        display: none;
+        justify-content: space-around;
+        position: relative;
+        grid-area: 2 / 1 / 3 / 4;
+        padding: 0 400px;
+        .you-pick {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 300px;
+            height: 300px;
+        }
+        // #house-pick {
+        //     margin-top: 50px;
+        // }
+        img {
+            width: 100px;
+            margin-top: 38px;
+            margin-left: 26px;
+        }
+        h4 {
+            color: white;
+            font-weight: 800;
+            font-size: 1.5em;
+            letter-spacing: 0.1em;
+            margin-top: 30px;
+            margin-bottom: 60px;
+        }
+        .the-house-pick {
+            display: flex;
+            position: relative;
+            flex-direction: column;
+            align-items: center;
+            height: 500px;
+        }
+        .win-lose {
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            justify-content: center;
+            margin-bottom: -20px;
+            width: 218px;
+            .win,
+            .lose,
+            .draw {
+                display: none;
+                justify-content: center;
+            }
+            h1 {
+                color: white;
+                font-size: 3.5em;
+                font-weight: 800;
+                margin-bottom: 15px;
+            }
+            button {
+                color: hsl(229, 25%, 31%);
+                border-radius: 10px;
+                padding: 11px;
+                font-size: 1.1em;
+                letter-spacing: 1px;
+                &:hover {
+                    color: rgb(236, 39, 39)
+                }
             }
         }
     }
-}
+    
+    // mobile version
+    @media only screen and (max-width: 600px) {
+        body {
+            font-family: 'Barlow Semi Condensed', sans-serif;
+            background: radial-gradient(top rgb(31, 54, 86), rgb(20, 23, 58) 100%);
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+        }
+        .main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            align-content: space-between;
+            justify-content: space-around;
+        }
+        // logo & score sector
+        .top {
+            order: 0;
+            display: flex;
+            position: relative;
+            justify-content: space-between;
+            align-content: center;
+            margin: 20px;
+            padding: 0px 20px 0px 30px;
+            border: hsl(217, 16%, 45%) 3px solid;
+            border-radius: 7px;
+            margin: 50px 56px;
+            padding: 15px 7px;
+            width: 350px;
+            height: 60px;
+            box-sizing: content-box;
+            order: 1;
+        }
+        .score-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            display: flex;
+            background: white;
+            height: 70px;
+            border-radius: 5px;
+            padding: 0 24px;
+            align-content: space-around;
+            .score-result {
+                font-size: 3em;
+                color: hsl(229, 25%, 31%);
+            }
+            #score-title {
+                font-size: 8px;
+                position: relative;
+                top: 10px;
+                color: hsl(229, 64%, 46%);
+                letter-spacing: 2px;
+                font-weight: 600;
+            }
+            .score-text {
+                color: hsl(229, 64%, 46%);
+                font-weight: 700;
+                font-size: 1.3em;
+            }
+        }
+        #logo img {
+            width: 85px;
+            margin-left: 15px;
+        }
+        // choice
+        .choice {
+            display: flex;
+            order: 1;
+            justify-content: center;
+            order: 2;
+            #paper {
+                position: relative;
+                background-image: url('./images/images/icon-paper.svg');
+                background-repeat: no-repeat;
+                background-size: 45%;
+                background-position: center;
+                border: 14px solid hsl(230, 89%, 62%);
+                box-shadow: inset 0 5px rgb(189, 181, 181), 0 6px hsl(230, 89%, 47%);
+                z-index: 1;
+                cursor: pointer;
+                left: 16%;
+            }
+            #triangle {
+                position: relative;
+                top: 20px;
+                width: 210px;
+            }
+            #scissors {
+                position: relative;
+                background-image: url('./images/images/icon-scissors.svg');
+                background-repeat: no-repeat;
+                background-size: 45%;
+                background-position: center;
+                border: 14px solid hsl(39, 89%, 49%);
+                box-shadow: inset 0 5px rgb(189, 181, 181), 0 6px hsl(40, 87%, 35%);
+                z-index: 1;
+                cursor: pointer;
+                right: 16%;
+            }
+        }
+        .base-choice {
+            background: rgb(223, 215, 215);
+            padding: 30px;
+            border-radius: 50%;
+            display: block;
+            width: 35px;
+            height: 35px;
+            box-sizing: content-box;
+        }
+        #rockcontainer {
+            display: flex;
+            order: 2;
+            justify-content: center;
+            position: relative;
+            top: 15px;
+        }
+        #rock {
+            position: relative;
+            background-image: url('./images/images/icon-rock.svg');
+            background-repeat: no-repeat;
+            background-size: 45%;
+            background-position: center;
+            border: 14px solid hsl(349, 71%, 52%);
+            box-shadow: inset 0 5px rgb(189, 181, 181), 0 6px hsl(349, 71%, 37%);
+            bottom: 80px;
+            cursor: pointer;
+        }
+        #rockImg {
+            margin-left: 5px;
+            margin-top: 7px;
+        }
+        // rules
+        .rules {
+            display: flex;
+            order: 5;
+            .rules-button {
+                position: none;
+                margin-top: 70px;
+            }
+        }
+        #rules-text {
+            display: inline-block;
+            color: hsl(229, 25%, 31%);
+            padding: 7px 35px;
+            border-radius: 10px;
+            border: grey 2px solid;
+            color: whitesmoke;
+            letter-spacing: 0.3em;
+            font-weight: lighter;
+            cursor: pointer;
+        }
+        .rules-img {
+            display: none;
+            flex-direction: column;
+            align-content: center;
+            justify-content: space-around;
+            align-items: center;
+            background-color: white;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            z-index: 1;
+            padding: 50px 0;
+            #rules {
+                font-size: 2em;
+                color: hsl(229, 25%, 31%);
+                font-weight: bold;
+                flex-basis: auto;
+                order: 1;
+            }
+            #close-btn {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                order: 3;
+            }
+            #game-rules {
+                margin-top: 35px;
+                order: 2;
+            }
+        }
+        // game part 1
+        //game playing sign style
+        .base-class {
+            width: 70px;
+            height: 70px;
+            background: rgb(223, 215, 215);
+            border-radius: 50%;
+            display: block;
+            box-sizing: content-box;
+            padding: 30px;
+        }
+        .game-scissors {
+            background-image: url(./images/images/icon-scissors.svg);
+            background-size: 45%;
+            background-position: center;
+            background-repeat: no-repeat;
+            border: 17px solid hsl(39, 89%, 49%);
+            box-shadow: inset 0 6px rgb(189, 181, 181), 0 6px hsl(40, 87%, 35%);
+        }
+        .game-rock {
+            background-image: url(./images/images/icon-rock.svg);
+            background-size: 45%;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 50%;
+            border: 17px solid hsl(349, 71%, 52%);
+            box-shadow: inset 0 6px rgb(189, 181, 181), 0 6px hsl(349, 71%, 37%);
+        }
+        .game-paper {
+            background-image: url(./images/images/icon-paper.svg);
+            background-size: 45%;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 50%;
+            border: 17px solid hsl(230, 89%, 62%);
+            box-shadow: inset 0 6px rgb(189, 181, 181), 0 6px hsl(230, 89%, 47%);
+            ;
+        }
+        // game-part1
+        .game-part1 {
+            display: none;
+            margin-top: 40px;
+            width: 100%;
+            justify-content: space-between;
+            position: relative;
+            padding: 0 50px;
+            order: 2;
+            .you-pick {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: auto;
+                height: auto;
+            }
+            img {
+                width: 100px;
+                margin-top: 38px;
+                margin-left: 26px;
+            }
+            h4 {
+                display: flex;
+                order: 2;
+                justify-content: center;
+                color: white;
+                font-weight: 700;
+                font-size: 1em;
+                letter-spacing: 0.2em;
+            }
+            .the-house-pick {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                h4 {
+                    order: 2;
+                }
+                .empty-spot {
+                    width: 140px;
+                    height: 140px;
+                    margin-top: 0;
+                    margin-bottom: 25px;
+                    order: 1;
+                    border-radius: 50%;
+                    background: rgb(20, 23, 58);
+                    opacity: 0.4;
+                }
+            }
+        }
+        // game part 2
+        .game-part3 {
+            display: none;
+            flex-wrap: wrap;
+            margin-top: 40px;
+            width: 100%;
+            justify-content: space-between;
+            position: relative;
+            padding: 0 50px;
+            height: 400px;
+            order: 2;
+            .you-pick {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: auto;
+                height: auto;
+                order: 1;
+                height: 210px;
+                order: 1;
+            }
+            #house-pick {
+                // margin-top: 50px;
+            }
+            img {
+                width: 100px;
+                margin-top: 38px;
+                margin-left: 26px;
+            }
+            h4 {
+                color: white;
+                font-weight: 700;
+                font-size: 1.0em;
+                letter-spacing: 0.2em;
+                margin-top: 30px;
+                order: 2;
+            }
+            .the-house-pick {
+                display: flex;
+                position: relative;
+                flex-direction: column;
+                align-items: center;
+                order: 2;
+                height: 210px;
+                h4 {
+                    margin: 30px 0 0 0;
+                }
+            }
+            .win-lose {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: -20px;
+                width: 218px;
+                margin-top: 75px;
+                flex-basis: 100%;
+                order: 3;
+                .win,
+                .lose,
+                .draw {
+                    display: none;
+                    justify-content: center;
+                }
+                h1 {
+                    color: white;
+                    font-size: 3.5em;
+                    font-weight: 800;
+                    margin-bottom: 15px;
+                }
+                button {
+                    color: hsl(229, 25%, 31%);
+                    border-radius: 10px;
+                    padding: 11px;
+                    font-size: 1.1em;
+                    letter-spacing: 1px;
+                    width: 218px;
+                    &:hover {
+                        color: rgb(236, 39, 39)
+                    }
+                }
+            }
+        }
+    }

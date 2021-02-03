@@ -197,7 +197,6 @@ body {
 .rules .rules-button {
   right: 200px;
   bottom: 160px;
-  position: fixed;
 }
 
 #rules-text {
@@ -220,19 +219,17 @@ body {
   grid-area: 2 / 2 / 3 / 3;
   width: 415px;
   height: 415px;
-  display: none;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -ms-flex-line-pack: center;
       align-content: center;
+  padding: 30px 0;
   -ms-flex-pack: distribute;
       justify-content: space-around;
   border-radius: 10px;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   background-color: white;
   left: 25%;
   bottom: 4%;
@@ -240,21 +237,12 @@ body {
   z-index: 1;
 }
 
-.rules-img .top-rules {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  padding-top: 20px;
-  width: 340px;
-}
-
 .rules-img #rules {
   font-size: 2em;
   color: #3b4363;
   font-weight: bold;
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
 }
 
 .rules-img #close-btn {
@@ -271,7 +259,7 @@ body {
 }
 
 .rules-img #game-rules {
-  padding-bottom: 20px;
+  margin-top: 35px;
 }
 
 .base-class {
@@ -476,5 +464,491 @@ body {
 
 .game-part3 .win-lose button:hover {
   color: #ec2727;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    background: radial-gradient(top #1f3656, #14173a 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+  }
+  .main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-line-pack: justify;
+        align-content: space-between;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
+  .top {
+    -webkit-box-ordinal-group: 1;
+        -ms-flex-order: 0;
+            order: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    margin: 20px;
+    padding: 0px 20px 0px 30px;
+    border: #606e85 3px solid;
+    border-radius: 7px;
+    margin: 50px 56px;
+    padding: 15px 7px;
+    width: 350px;
+    height: 60px;
+    -webkit-box-sizing: content-box;
+            box-sizing: content-box;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  .score-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    display: flex;
+    background: white;
+    height: 70px;
+    border-radius: 5px;
+    padding: 0 24px;
+    -ms-flex-line-pack: distribute;
+        align-content: space-around;
+  }
+  .score-container .score-result {
+    font-size: 3em;
+    color: #3b4363;
+  }
+  .score-container #score-title {
+    font-size: 8px;
+    position: relative;
+    top: 10px;
+    color: #2a46c0;
+    letter-spacing: 2px;
+    font-weight: 600;
+  }
+  .score-container .score-text {
+    color: #2a46c0;
+    font-weight: 700;
+    font-size: 1.3em;
+  }
+  #logo img {
+    width: 85px;
+    margin-left: 15px;
+  }
+  .choice {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  .choice #paper {
+    position: relative;
+    background-image: url("./images/images/icon-paper.svg");
+    background-repeat: no-repeat;
+    background-size: 45%;
+    background-position: center;
+    border: 14px solid #4865f4;
+    -webkit-box-shadow: inset 0 5px #bdb5b5, 0 6px #0d31e3;
+            box-shadow: inset 0 5px #bdb5b5, 0 6px #0d31e3;
+    z-index: 1;
+    cursor: pointer;
+    left: 16%;
+  }
+  .choice #triangle {
+    position: relative;
+    top: 20px;
+    width: 210px;
+  }
+  .choice #scissors {
+    position: relative;
+    background-image: url("./images/images/icon-scissors.svg");
+    background-repeat: no-repeat;
+    background-size: 45%;
+    background-position: center;
+    border: 14px solid #ec9e0e;
+    -webkit-box-shadow: inset 0 5px #bdb5b5, 0 6px #a7730c;
+            box-shadow: inset 0 5px #bdb5b5, 0 6px #a7730c;
+    z-index: 1;
+    cursor: pointer;
+    right: 16%;
+  }
+  .base-choice {
+    background: #dfd7d7;
+    padding: 30px;
+    border-radius: 50%;
+    display: block;
+    width: 35px;
+    height: 35px;
+    -webkit-box-sizing: content-box;
+            box-sizing: content-box;
+  }
+  #rockcontainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    position: relative;
+    top: 15px;
+  }
+  #rock {
+    position: relative;
+    background-image: url("./images/images/icon-rock.svg");
+    background-repeat: no-repeat;
+    background-size: 45%;
+    background-position: center;
+    border: 14px solid #dc2e4e;
+    -webkit-box-shadow: inset 0 5px #bdb5b5, 0 6px #a11b34;
+            box-shadow: inset 0 5px #bdb5b5, 0 6px #a11b34;
+    bottom: 80px;
+    cursor: pointer;
+  }
+  #rockImg {
+    margin-left: 5px;
+    margin-top: 7px;
+  }
+  .rules {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-ordinal-group: 6;
+        -ms-flex-order: 5;
+            order: 5;
+  }
+  .rules .rules-button {
+    position: none;
+    margin-top: 70px;
+  }
+  #rules-text {
+    display: inline-block;
+    color: #3b4363;
+    padding: 7px 35px;
+    border-radius: 10px;
+    border: grey 2px solid;
+    color: whitesmoke;
+    letter-spacing: 0.3em;
+    font-weight: lighter;
+    cursor: pointer;
+  }
+  .rules-img {
+    display: none;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    padding: 50px 0;
+  }
+  .rules-img #rules {
+    font-size: 2em;
+    color: #3b4363;
+    font-weight: bold;
+    -ms-flex-preferred-size: auto;
+        flex-basis: auto;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  .rules-img #close-btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    cursor: pointer;
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+  }
+  .rules-img #game-rules {
+    margin-top: 35px;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  .base-class {
+    width: 70px;
+    height: 70px;
+    background: #dfd7d7;
+    border-radius: 50%;
+    display: block;
+    -webkit-box-sizing: content-box;
+            box-sizing: content-box;
+    padding: 30px;
+  }
+  .game-scissors {
+    background-image: url(./images/images/icon-scissors.svg);
+    background-size: 45%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 17px solid #ec9e0e;
+    -webkit-box-shadow: inset 0 6px #bdb5b5, 0 6px #a7730c;
+            box-shadow: inset 0 6px #bdb5b5, 0 6px #a7730c;
+  }
+  .game-rock {
+    background-image: url(./images/images/icon-rock.svg);
+    background-size: 45%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    border: 17px solid #dc2e4e;
+    -webkit-box-shadow: inset 0 6px #bdb5b5, 0 6px #a11b34;
+            box-shadow: inset 0 6px #bdb5b5, 0 6px #a11b34;
+  }
+  .game-paper {
+    background-image: url(./images/images/icon-paper.svg);
+    background-size: 45%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    border: 17px solid #4865f4;
+    -webkit-box-shadow: inset 0 6px #bdb5b5, 0 6px #0d31e3;
+            box-shadow: inset 0 6px #bdb5b5, 0 6px #0d31e3;
+  }
+  .game-part1 {
+    display: none;
+    margin-top: 40px;
+    width: 100%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    position: relative;
+    padding: 0 50px;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  .game-part1 .you-pick {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: auto;
+    height: auto;
+  }
+  .game-part1 img {
+    width: 100px;
+    margin-top: 38px;
+    margin-left: 26px;
+  }
+  .game-part1 h4 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    color: white;
+    font-weight: 700;
+    font-size: 1em;
+    letter-spacing: 0.2em;
+  }
+  .game-part1 .the-house-pick {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .game-part1 .the-house-pick h4 {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  .game-part1 .the-house-pick .empty-spot {
+    width: 140px;
+    height: 140px;
+    margin-top: 0;
+    margin-bottom: 25px;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    border-radius: 50%;
+    background: #14173a;
+    opacity: 0.4;
+  }
+  .game-part3 {
+    display: none;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin-top: 40px;
+    width: 100%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    position: relative;
+    padding: 0 50px;
+    height: 400px;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  .game-part3 .you-pick {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: auto;
+    height: auto;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    height: 210px;
+    order: 1;
+  }
+  .game-part3 img {
+    width: 100px;
+    margin-top: 38px;
+    margin-left: 26px;
+  }
+  .game-part3 h4 {
+    color: white;
+    font-weight: 700;
+    font-size: 1.0em;
+    letter-spacing: 0.2em;
+    margin-top: 30px;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  .game-part3 .the-house-pick {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    height: 210px;
+  }
+  .game-part3 .the-house-pick h4 {
+    margin: 30px 0 0 0;
+  }
+  .game-part3 .win-lose {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-bottom: -20px;
+    width: 218px;
+    margin-top: 75px;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+  }
+  .game-part3 .win-lose .win,
+  .game-part3 .win-lose .lose,
+  .game-part3 .win-lose .draw {
+    display: none;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .game-part3 .win-lose h1 {
+    color: white;
+    font-size: 3.5em;
+    font-weight: 800;
+    margin-bottom: 15px;
+  }
+  .game-part3 .win-lose button {
+    color: #3b4363;
+    border-radius: 10px;
+    padding: 11px;
+    font-size: 1.1em;
+    letter-spacing: 1px;
+    width: 218px;
+  }
+  .game-part3 .win-lose button:hover {
+    color: #ec2727;
+  }
 }
 /*# sourceMappingURL=style.css.map */

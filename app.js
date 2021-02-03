@@ -26,9 +26,9 @@ const rulesIMG = document.querySelector('.rules-img');
 
 
 // rules functions
-window.onload = () => {
-    rulesIMG.style.display = 'flex';
-}
+// window.onload = () => {
+//     rulesIMG.style.display = 'flex';
+// }
 
 function closeRules() {
     rulesIMG.style.display = 'none';
