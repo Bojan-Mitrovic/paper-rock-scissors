@@ -22,21 +22,19 @@ const draw = document.querySelector('.draw');
 var score = 0;
 
 const rulesIMG = document.querySelector('.rules-img');
+const wrapperIMG = document.querySelector('.wrapper-rules-img');
 
 
 
-// rules functions
-// window.onload = () => {
-//     rulesIMG.style.display = 'flex';
-// }
 
 function closeRules() {
     rulesIMG.style.display = 'none';
+    wrapperIMG.style.display = 'none';
 }
 
 function showRules() {
     rulesIMG.style.display = 'flex';
-
+    wrapperIMG.style.display = 'grid';
 }
 
 

@@ -12,7 +12,7 @@ body {
   background: radial-gradient(circle at top, #1f3656 30%, #14173a 100%);
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
+  height: 100%;
 }
 
 .main {
@@ -195,6 +195,7 @@ body {
 }
 
 .rules .rules-button {
+  position: fixed;
   right: 200px;
   bottom: 160px;
 }
@@ -211,6 +212,19 @@ body {
   cursor: pointer;
 }
 
+/* rules image */
+.wrapper-rules-img {
+  display: -ms-grid;
+  display: grid;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 3;
+}
+
 .rules-img {
   -ms-grid-row: 2;
   -ms-grid-row-span: 1;
@@ -223,17 +237,15 @@ body {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   -ms-flex-line-pack: center;
-      align-content: center;
+  align-content: center;
   padding: 30px 0;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   border-radius: 10px;
   background-color: white;
-  left: 25%;
-  bottom: 4%;
-  position: absolute;
+  position: relative;
   z-index: 1;
 }
 

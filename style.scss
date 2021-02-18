@@ -11,7 +11,7 @@
         background: radial-gradient(circle at top, rgb(31, 54, 86) 30%, rgb(20, 23, 58) 100%);
         background-repeat: no-repeat;
         background-size: cover;
-        height: 100vh;
+        height: 100%;
     }
     
     // positioning
@@ -106,6 +106,7 @@
         }
     }
     
+    // winners shadow
     .base-choice {
         background: rgb(223, 215, 215);
         padding: 30px;
@@ -143,6 +144,7 @@
     .rules {
         grid-area: 3 / 3 / 4 / 4;
         .rules-button {
+            position: fixed;
             right: 200px;
             bottom: 160px;
         }
@@ -159,21 +161,36 @@
         font-weight: lighter;
         cursor: pointer;
     }
+    /* rules image */
+    
+    .wrapper-rules-img {
+        display: grid;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 3;
+    }
     
     .rules-img {
         grid-area: 2 / 2 / 3 / 3;
         width: 415px;
         height: 415px;
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
+        -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+        -ms-flex-line-pack: center;
         align-content: center;
         padding: 30px 0;
+        -ms-flex-pack: distribute;
         justify-content: space-around;
         border-radius: 10px;
         background-color: white;
-        left: 25%;
-        bottom: 4%;
-        position: absolute;
+        position: relative;
         z-index: 1;
         #rules {
             font-size: 2em;
