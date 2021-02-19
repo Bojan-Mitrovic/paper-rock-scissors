@@ -12,7 +12,7 @@ body {
   background: radial-gradient(circle at top, #1f3656 30%, #14173a 100%);
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100%;
+  min-height: 100vh;
 }
 
 .main {
